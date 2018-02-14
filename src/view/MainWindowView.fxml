@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.text.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="462.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainWindowController">
+   <children>
+      <TabPane prefHeight="462.0" prefWidth="400.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="GPX to Cruiser">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox prefHeight="372.0" prefWidth="372.0" spacing="14.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                           <children>
+                              <Label text="Input file">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="openGpxButton" mnemonicParsing="false" onAction="#handleOpenGpxButton" text="Open GPX file" />
+                              <HBox>
+                                 <children>
+                                    <Label text="Route found: " />
+                                    <ImageView fx:id="routeGpxImage" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="14.0">
+                                 <children>
+                                    <Label text="Waypoints (max 100):" />
+                                    <Label fx:id="waypointCounterGpxLabel" prefWidth="50.0">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Output file">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <HBox>
+                                 <children>
+                                    <CheckBox fx:id="highwayCheckbox" disable="true" mnemonicParsing="false" onAction="#handleHighwayCheckbox" text="Forbid highways" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <CheckBox fx:id="tollCheckbox" disable="true" mnemonicParsing="false" onAction="#handleTollCheckbox" text="Forbid toll roads" />
+                                 </children>
+                              </HBox>
+                              <HBox>
+                                 <children>
+                                    <CheckBox fx:id="ferryCheckbox" disable="true" mnemonicParsing="false" onAction="#handleFerryCheckbox" text="Forbid ferries" />
+                                 </children>
+                              </HBox>
+                              <Button fx:id="saveCruiserButton" disable="true" mnemonicParsing="false" onAction="#handleSaveCruiserButton" text="Save Cruiser file" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Cruiser to GPX">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <VBox layoutX="14.0" layoutY="14.0" prefHeight="398.0" prefWidth="372.0" spacing="14.0" AnchorPane.bottomAnchor="14.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="14.0" AnchorPane.topAnchor="14.0">
+                           <children>
+                              <Label text="Input file">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="openCruiserButton" mnemonicParsing="false" onAction="#handleOpenCruiserButton" text="Open Cruiser file" />
+                              <HBox>
+                                 <children>
+                                    <Label text="Route found: " />
+                                    <ImageView fx:id="routeCruiserImage" fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true" />
+                                 </children>
+                              </HBox>
+                              <HBox spacing="14.0">
+                                 <children>
+                                    <Label text="Waypoints:" />
+                                    <Label fx:id="waypointCounterCruiserLabel" prefWidth="50.0">
+                                       <HBox.margin>
+                                          <Insets />
+                                       </HBox.margin>
+                                    </Label>
+                                 </children>
+                              </HBox>
+                              <Label text="Output file">
+                                 <font>
+                                    <Font name="System Bold" size="24.0" />
+                                 </font>
+                              </Label>
+                              <Button fx:id="saveGpxButton" disable="true" mnemonicParsing="false" onAction="#handleSaveGpxButton" text="Save GPX file" />
+                           </children>
+                        </VBox>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </TabPane>
+   </children>
+</AnchorPane>
